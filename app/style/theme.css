@@ -1,0 +1,30 @@
+:root {
+  --primary: #e83c3d;
+  --black: #151313;
+  --white: #fbfbfb;
+}
+
+.component {
+  margin: 0.75rem;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.icon.small {
+  height: 1rem;
+  width: 1rem;
+}
+.icon.medium {
+  height: 2rem;
+  width: 2rem;
+}
+.icon.large {
+  height: 3rem;
+  width: 3rem;
+}

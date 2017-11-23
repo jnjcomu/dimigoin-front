@@ -2,8 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-require('dotenv').config()
+const config = require('./config')
 
 const cssLoaders = [
   {
@@ -12,7 +11,12 @@ const cssLoaders = [
       importLoaders: 1
     }
   },
-  'postcss-loader'
+  {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap: true
+    }
+  }
 ]
 
 const cssExtract = ExtractTextPlugin.extract({
@@ -28,13 +32,16 @@ export default {
   entry: './app/app.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, process.env.DIST_PATH)
+    path: path.resolve(__dirname, config.DIST_PATH)
   },
 
   plugins: [
-    new ExtractTextPlugin('bundle.css'),
+    new ExtractTextPlugin({
+      filename: 'bundle.css',
+      disable: process.env.NODE_ENV !== 'production' // extract-text-plugin is not for development.
+    }),
     new HtmlPlugin({
-      title: process.env.TITLE,
+      title: config.TITLE,
       template: 'app/app.html'
     })
   ],
@@ -69,7 +76,7 @@ export default {
     port: 8888,
     host: '0.0.0.0',
     historyApiFallback: true,
-    proxy: { '**': `http://localhost:${process.env.DEV_PORT}` }
+    proxy: { '**': `http://localhost:${config.DEV_PORT}` }
   }
 }
 

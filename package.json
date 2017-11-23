@@ -44,7 +44,9 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "dotenv": "^4.0.0",
+    "flexboxgrid": "^6.3.1",
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^7.0.0",
     "rxjs": "^5.5.2",
     "vue": "^2.5.8",
     "vue-router": "^3.0.1",

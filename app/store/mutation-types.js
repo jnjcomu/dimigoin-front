@@ -1,0 +1,11 @@
+export const UPDATE_JWT = 'account/UPDATE_JWT'
+export const LOGIN = 'account/LOGIN'
+export const LOGOUT = 'account/LOGOUT'
+
+export const ADD_POST = 'post/ADD_POST'
+export const REMOVE_POST = 'post/REMOVE_POST'
+export const UPDATE_POST = 'post/UPDATE_POST'
+export const FETCH_POST = 'post/FETCH_POST'
+export const ADD_COMMENT = 'post/POST_COMMENT'
+export const REMOVE_COMMENT = 'post/REMOVE_COMMENT'
+export const UPDATE_COMMENT = 'post/UPDATE_COMMENT'
